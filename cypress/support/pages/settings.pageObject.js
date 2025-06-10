@@ -1,6 +1,7 @@
 import PageObject from '../PageObject';
 
  class SettingsPageObject extends PageObject {
+  url = '/settings';
   get nameField(){
     return cy.get('[placeholder=Username]');
   }

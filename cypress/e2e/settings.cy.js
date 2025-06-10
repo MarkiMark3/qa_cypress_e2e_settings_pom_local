@@ -26,7 +26,7 @@ describe('Settings page', () => {
     cy.task('db:clear');
     cy.login();
     cy.reload();
-    cy.visit('localhost:3000/settings');
+    settingsPage.visit();
   });
 
   it('should provide an ability to update username', () => {
@@ -45,6 +45,8 @@ describe('Settings page', () => {
   it('should provide an ability to update an email', () => {
     settingsPage.typeEmail(newEmail);
     settingsPage.clickUpdateButton();
+    settingsPage.visit();
+    settingsPage.emailField.should('have.value', newEmail);
 
   });
 
